@@ -45,8 +45,8 @@ digitalWrite(in_3C,HIGH);
 digitalWrite(in_4C,HIGH);
 digitalWrite(in_1D,HIGH); 
 digitalWrite(in_2D,HIGH);
-analogWrite(ENC, 100);
-analogWrite(END, 100);
+analogWrite(ENC, 255);
+analogWrite(END, 255);
 analogWrite(ENB, 255);// Estamos a variar a tensão média que é transmitida para o motor. Atraves da variação do potenciometro
 analogWrite(ENA, 255);
 delay(1000); // 1 Segundo de espera
@@ -57,54 +57,63 @@ by chaning pwm input but we are only
 using arduino so we are using higest
 value to driver the motor  */  
 
-//Para a roda 1 no sentido horario:
+// Para a roda 1 no sentido anti-horario: (Roda frente)
+digitalWrite(in_1A,HIGH);  
+digitalWrite(in_2A,LOW);
+delay(1000);
+
+
+
+
+// Roda 1 frente esquerda (parte nao partida)
+//Para a roda 1 no sentido horario: (Roda para tras)
 digitalWrite(in_1A,LOW); 
 digitalWrite(in_2A,HIGH);
 delay(1000);
-// Para a roda 1 no sentido anti-horario:
-digitalWrite(in_1A,HIGH); 
-digitalWrite(in_2A,LOW);
-delay(1000);
+
 // Parar a roda 1
 digitalWrite(in_1A,HIGH); 
 digitalWrite(in_2A,HIGH);
 delay(1000);
 
-
-// Para a roda 2:
-digitalWrite(in_3B,HIGH);
-digitalWrite(in_4B,HIGH);
-delay(1000);
-
-// Para a roda 2 rodar no sentido horario;
+// Para a roda 2 rodar no sentido horario; (Roda para frente)
 digitalWrite(in_3B,LOW);
 digitalWrite(in_4B,HIGH);
 delay(1000);
+
+
+
+// roda frente direita (
+ // Para a roda 2: (RODA PARA TRAS)
+digitalWrite(in_3B,HIGH);
+digitalWrite(in_4B,LOW);
+delay(1000);
+
 
 // Para a roda 2 rodar no sentido anti-horario;
 digitalWrite(in_3B,HIGH);
-digitalWrite(in_4B,LOW);
+digitalWrite(in_4B,HIGH);
 delay(1000);
-// As 4 rodas a rodar no sentido horario:
+// As 4 rodas a rodar no sentido horario: (Roda para frente)
+digitalWrite(in_1A,HIGH);  
+digitalWrite(in_2A,LOW);
 digitalWrite(in_3B,LOW);
 digitalWrite(in_4B,HIGH);
-digitalWrite(in_1A,LOW); 
-digitalWrite(in_2A,HIGH);
-digitalWrite(in_3C,LOW);
-digitalWrite(in_4C,HIGH);
 digitalWrite(in_1D,LOW); 
 digitalWrite(in_2D,HIGH);
+digitalWrite(in_3C,HIGH); 
+digitalWrite(in_4C,LOW);
 delay(1000);
 
-// As 4 rodas no sentido anti-horario:
+// As 4 rodas no sentido anti-horario: Roda para tras
+digitalWrite(in_1A,LOW); 
+digitalWrite(in_2A,HIGH);
 digitalWrite(in_3B,HIGH);
 digitalWrite(in_4B,LOW);
-digitalWrite(in_1A,HIGH); 
-digitalWrite(in_2A,LOW);
-digitalWrite(in_3C,HIGH);
-digitalWrite(in_4C,LOW);
-digitalWrite(in_1D,HIGH); 
+digitalWrite(in_1D,HIGH);  
 digitalWrite(in_2D,LOW);
+digitalWrite(in_3C,LOW);
+digitalWrite(in_4C,HIGH);
 delay(1000);
 
 // As 4 parar:
@@ -118,22 +127,22 @@ digitalWrite(in_1D,HIGH);
 digitalWrite(in_2D,HIGH);
 delay(1000);
 
-
-//Para a roda 3 no sentido horario:
+// Roda de tras direita
+//Para a roda 3 no sentido horario: (roda para frente)
 digitalWrite(in_1D,LOW); 
 digitalWrite(in_2D,HIGH);
 delay(1000);
-// Para a roda 3 no sentido anti-horario:
-digitalWrite(in_1D,HIGH); 
+// Para a roda 3 no sentido anti-horario: (roda para tras)
+digitalWrite(in_1D,HIGH);  
 digitalWrite(in_2D,LOW);
 delay(1000);
 // Parar a roda 3
 digitalWrite(in_1D,HIGH); 
 digitalWrite(in_2D,HIGH);
 delay(1000);
-// Para a roda 4:
-digitalWrite(in_3C,HIGH);
-digitalWrite(in_4C,HIGH);
+// Para a roda 4: (RODA PARA FRENTE)
+digitalWrite(in_3C,HIGH); 
+digitalWrite(in_4C,LOW);
 delay(1000);
 
 // Para a roda 4 rodar no sentido horario;
@@ -143,7 +152,6 @@ delay(1000);
 
 // Para a roda 4 rodar no sentido anti-horario;
 digitalWrite(in_3C,HIGH);
-digitalWrite(in_4C,LOW);
+digitalWrite(in_4C,HIGH);
 delay(1000);
 }
-// 
