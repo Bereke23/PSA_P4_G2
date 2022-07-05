@@ -1,25 +1,4 @@
-/************************************************************************
-
-  Test of the Pmod
-
-*************************************************************************
-
-  Description: Pmod_CMPS2
-  Calculates the heading of the device form the X and Y components of the magnetic field
-
-  Wiring
-  Module<----------> Arduino
-  VCC     to        3V3
-  GND     to        GND
-  SCL     to        A5 (SCL)
-  SDA     to        A4 (SDA)
-
-*************************************************************************/
-
-// The earth's magnetic field varies according to its location.
-// Add or subtract a constant to get the right value
-// of the magnetic field using the following site
-// http://www.ngdc.noaa.gov/geomag-web/#declination
+/
 
 #define DECLINATION 6.11 // declination (in degrees) in Saint George (Romania).
 
